@@ -12,6 +12,9 @@ public class TwoDimensionTwoCannons {
         System.out.println("What speed in meters per second?");
         System.out.print(">");
 
+        System.out.println("What change in meters horizontal from zero?");
+        System.out.print(">");
+        double xChangeOne = myObj.nextDouble();
         double velocityNumberOne = myObj.nextDouble();
         double angleNumberOne = (degreeNumberOne * Math.PI)/180;
 
@@ -35,6 +38,9 @@ public class TwoDimensionTwoCannons {
         System.out.println("What speed in meters per second?");
         System.out.print(">");
 
+        System.out.println("What change in meters horizontal from zero?");
+        System.out.print(">");
+        double xChangeTwo = myObj.nextDouble();
         double velocityNumberTwo = myObj.nextDouble();
         double angleNumberTwo = (degreeNumberTwo * Math.PI)/180;
 
@@ -49,21 +55,23 @@ public class TwoDimensionTwoCannons {
         double xTwo = xComponentTwo * tTwo;
 
         //output
+        double xFinalOne = xOne + xChangeOne;
         System.out.println();
         System.out.println("Cannon One:");
         System.out.println("The angle is "+degreeNumberOne+" degrees");
         System.out.println("The speed is "+velocityNumberOne+" meters per second");
         System.out.println("The time in air is "+tOne+" seconds");
-        System.out.println("The final position is ("+xOne+",0)");
+        System.out.println("The final position is ("+xFinalOne+",0)");
 
+        double xFinalTwo = xTwo + xChangeTwo;
         System.out.println();
         System.out.println("Cannon Two:");
         System.out.println("The angle is "+degreeNumberTwo+" degrees");
         System.out.println("The speed is "+velocityNumberTwo+" meters per second");
         System.out.println("The time in air is "+tTwo+" seconds");
-        System.out.println("The final position is ("+xTwo+",0)");
+        System.out.println("The final position is ("+xFinalTwo+",0)");
 
-        double dist = Math.abs(xTwo-xOne);
+        double dist = Math.abs(xFinalOne-xFinalTwo);
         System.out.println();
         System.out.println("Their distance is "+dist+" meters");
     }

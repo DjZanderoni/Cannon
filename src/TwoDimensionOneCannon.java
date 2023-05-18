@@ -1,7 +1,14 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Scanner;
+import javax.swing.*;
 
 public class TwoDimensionOneCannon {
     public static void go(){
+
+        //rounding
+
         // asks and receives input for degrees
         Scanner myObj = new Scanner(System.in);
         System.out.println("Cannon Parameters:");
@@ -12,6 +19,9 @@ public class TwoDimensionOneCannon {
         System.out.println("What speed in meters per second?");
         System.out.print(">");
         double velocityNumber = myObj.nextDouble();
+        System.out.println("What change in meters horizontal from zero?");
+        System.out.print(">");
+        double xChange = myObj.nextDouble();
         //temporary
         //System.out.println(Math.cos(angleInputNumber));
         //System.out.println(Math.sin(angleInputNumber));
@@ -34,16 +44,17 @@ public class TwoDimensionOneCannon {
 
 //        for( int i = 0; i < 100; i++ ) System.out.println();
 //        line();
+        double xFinal = xChange + x;
         System.out.println();
         System.out.println("The angle is "+degreeNumber+" degrees");
         System.out.println("The speed is "+velocityNumber+" meters per second");
         System.out.println("The time in air is "+t2+" seconds");
-        System.out.println("The final position is ("+x+",0)");
+        System.out.println("The final position is ("+xFinal+",0)");
 //        System.out.println();
 //        line();
         }
 
-        //public static void line() { for( int i = 0; i < 500; i++ ) System.out.print( '#' ); System.out.println(); }
+
     }
 
 

@@ -32,6 +32,14 @@ public class ThreeDimensionTwoCannons {
         System.out.print(">");
 
         double velocityNumberOne = myObj.nextDouble();
+        System.out.println("What x change in meters?");
+        System.out.print(">");
+
+        double xChangeOne = myObj.nextDouble();
+        System.out.println("What y change in meters?");
+        System.out.print(">");
+
+        double yChangeOne = myObj.nextDouble();
         double yzAngleNumberOne = (yzDegreeNumberOne * Math.PI)/180;
         double yxAngleNumberOne = (yxDegreeNumberOne * Math.PI)/180;
 
@@ -74,6 +82,14 @@ public class ThreeDimensionTwoCannons {
         System.out.print(">");
 
         double velocityNumberTwo = myObj.nextDouble();
+        System.out.println("What x change in meters?");
+        System.out.print(">");
+
+        double xChangeTwo = myObj.nextDouble();
+        System.out.println("What y change in meters?");
+        System.out.print(">");
+
+        double yChangeTwo = myObj.nextDouble();
         double yzAngleNumberTwo = (yzDegreeNumberTwo * Math.PI)/180;
         double yxAngleNumberTwo = (yxDegreeNumberTwo * Math.PI)/180;
 
@@ -95,8 +111,8 @@ public class ThreeDimensionTwoCannons {
         System.out.println("yx angle is "+yxDegreeNumberOne);
         System.out.println("The speed is "+velocityNumberOne);
         System.out.println("Time in air is "+tOne);
-        double xOne = xComponentOne * tOne;
-        double yOne = yComponentOne * tOne;
+        double xOne = (xComponentOne * tOne) + xChangeOne;
+        double yOne = (yComponentOne * tOne) + yChangeOne;
         double zOne = 0;
         System.out.println("("+xOne+","+yOne+","+zOne+")");
         System.out.println();
@@ -105,12 +121,11 @@ public class ThreeDimensionTwoCannons {
         System.out.println("yx angle is "+yxDegreeNumberTwo);
         System.out.println("The speed is "+velocityNumberTwo);
         System.out.println("Time in air is "+tTwo);
-        double xTwo = xComponentTwo * tTwo;
-        double yTwo = yComponentTwo * tTwo;
+        double xTwo = (xComponentTwo * tTwo)+ xChangeTwo;
+        double yTwo = (yComponentTwo * tTwo)+ yChangeTwo;
         double zTwo = 0;
         System.out.println("("+xTwo+","+yTwo+","+zTwo+")");
         double dist = Math.sqrt(Math.pow(xTwo-xOne,2)+Math.pow(yTwo-yOne,2));
         System.out.println("Their distance is "+dist);
-
     }
 }

@@ -33,6 +33,14 @@ public class ThreeDimensionOneCannon {
         System.out.print(">");
 
         double velocityNumberOne = myObj.nextDouble();
+        System.out.println("What x change in meters?");
+        System.out.print(">");
+
+        double xChange = myObj.nextDouble();
+        System.out.println("What y change in meters?");
+        System.out.print(">");
+
+        double yChange = myObj.nextDouble();
         double yzAngleNumberOne = (yzDegreeNumberOne * Math.PI)/180;
         double yxAngleNumberOne = (yxDegreeNumberOne * Math.PI)/180;
 
@@ -58,8 +66,8 @@ public class ThreeDimensionOneCannon {
         System.out.println("yx angle is "+yxDegreeNumberOne);
         System.out.println("The speed is "+velocityNumberOne);
         System.out.println("Time in air is "+tOne);
-        double xOne = xComponentOne * tOne;
-        double yOne = yComponentOne * tOne;
+        double xOne = (xComponentOne * tOne) + xChange;
+        double yOne = (yComponentOne * tOne) + yChange;
         double zOne = 0;
         System.out.println("("+xOne+","+yOne+","+zOne+")");
 
